@@ -23,7 +23,7 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/champion/{id}")
     public String getChampion(ModelMap map, @PathVariable String id) {
         Champion champion = championRepository.getChampionById(Integer.valueOf(id));
         map.put("champion", champion);

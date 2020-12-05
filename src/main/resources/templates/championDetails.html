@@ -53,7 +53,7 @@
                     <th style="text-align: left; font-size: 30px; color: crimson;">HARD COUNTERS: </th>
                     <tr style="height: 230px;">
                         <td th:each="champion: ${counters}", style="text-align: center; width: 120px;" >
-                            <a th:href="@{'/' + ${champion.id}}">
+                            <a th:href="@{'/champion/' + ${champion.id}}">
                                 <img th:src="${champion.imagePath}">
                                 <button type="button" th:text="${champion.name}", style="width: 140px; font-size: 30px;"/>
                             </a>
@@ -62,7 +62,7 @@
                     <th style="text-align: left; font-size: 30px; color: greenyellow">EASY MATCHUP'S:</th>
                     <tr style="height: 230px;">
                         <td th:each="champion: ${goodMatchup}", style="text-align: center; width: 120px;">
-                            <a th:href="@{'/' + ${champion.id}}">
+                            <a th:href="@{'/champion/' + ${champion.id}}">
                                 <img th:src="${champion.imagePath}">
                                 <button type="button" th:text="${champion.name}", style="width: 140px; font-size: 30px;"/>
                             </a>
