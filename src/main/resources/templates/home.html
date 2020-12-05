@@ -34,9 +34,23 @@
 
 
 </h1>
+<div>
+    SearchBar
+</div>
+<div>
+    <label>
+        <input id="search-bar" type="text">
+    </label>
+</div>
 <h2>
     <table style="border-spacing: 10px 0px; ">
-        <tr th:each="champion: ${champions}", style="display: inline-block;">
+        <tr
+                th:each="champion: ${champions}"
+                class="champion"
+                th:object="${champion}"
+                th:name="${champion.name}"
+                style="display: inline-block;"
+        >
             <td>
                 <a th:href="@{'/' + ${champion.id}}">
                     <img th:src="${champion.imagePath}", style=" width: 75%; height: 75%;"/>
@@ -50,5 +64,7 @@
         </tr>
     </table>
 </h2>
+<script src="/script/filter.js"></script>
+<!--<script type="text/javascript" th:src="@{/script/filter.js}"></script>-->
 </body>
 </html>
